@@ -54,13 +54,13 @@ public:
 	// adds pushMe to the top of the stack
 	void push (Data) {
 		Node<Data>*Node2;
-		Node2=new Node<Data>(Data);
+		Node2=new Node<Data>(element);
 		Node2->setNext(head);
 		head=Node2;
 		}
 
 	// return true if there are not any items in the stack
-	bool isEmpty ()) { 
+	bool isEmpty () { 
 		if(head==nullptr){
  		return true;
 		}			
