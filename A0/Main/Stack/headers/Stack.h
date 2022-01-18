@@ -54,9 +54,9 @@ public:
 		head=nullptr;}
 
 	// adds pushMe to the top of the stack
-	void push (Data) {
+	void push (Data data) {
 		Node<Data>*NodeN;
-		NodeN=new Node<Data>;
+		NodeN=new Node<Data>(data);
 		NodeN->setNext(head);
 		head=NodeN;
 		}
