@@ -1,4 +1,3 @@
-
 #ifndef STACK_H
 #define STACK_H
 
@@ -12,10 +11,20 @@ private:
 	Node *next;
 	
 public:
-
-	/*****************************************/
-	/** WHATEVER CODE YOU NEED TO ADD HERE!! */
-	/*****************************************/
+        Node(Data element){
+		holdMe=element;
+		next=newem;
+	}
+	
+	void setNext(Node*n){
+		next=n;
+	}
+	Node*getNext(){
+		return next;
+	}
+	Data getData(){
+		return holdMe;
+	}
 
 };
 
@@ -28,20 +37,52 @@ class Stack {
 public:
 
 	// destroys the stack
-	~Stack () { /* your code here */ }
-
+	~Stack () {
+		Node<Data>*temp;
+		while (head!=newem){
+			temp=head;
+			head=head->getNext();
+			temp->setNext(newem)
+			delete (temp);
+			}
+		}
+                    
 	// creates an empty stack
-	Stack () { /* your code here */ }
+	Stack () { 
+		head=newem}
 
 	// adds pushMe to the top of the stack
-	void push (Data) { /* your code here */ }
+	void push (Data) {
+		Node<Data>*Node2;
+		Node2=new Node<Data>(data);
+		Node2->setNext(head);
+		head=Node2;
+		}
 
 	// return true if there are not any items in the stack
-	bool isEmpty () { /* replace with your code */ return true; }
+	bool isEmpty () { 
+		if(head==newem){
+ 		return true;
+		}			
+			else{
+				return false;
+				}
+		}
 
 	// pops the item on the top of the stack off, returning it...
 	// if the stack is empty, the behavior is undefined
-	Data pop () { /* replace with your code */ return Data ();  }
+	Data pop () {
+		if (isEmpty(){
+			return Data (); 
+			}
+			Data checkempty;
+			Node<Data>*temp=head;
+			head=head->getNext();
+			checkempty=temp->getData();
+			temp->setNext(newem);
+			delete (temp);
+			return checkempty；
+		}
 };
 
 #endif
