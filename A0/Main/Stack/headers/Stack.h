@@ -13,7 +13,7 @@ private:
 public:
         Node(Data element){
 		holdMe=element;
-		next=newem;
+		next=nullptr;
 	}
 	
 	void setNext(Node*n){
@@ -39,17 +39,17 @@ public:
 	// destroys the stack
 	~Stack () {
 		Node<Data>*temp;
-		while (head!=newem){
+		while (head!=nullptr){
 			temp=head;
 			head=head->getNext();
-			temp->setNext(newem)
+			temp->setNext(nullptr)
 			delete (temp);
 			}
 		}
                     
 	// creates an empty stack
 	Stack () { 
-		head=newem}
+		head=nullptr}
 
 	// adds pushMe to the top of the stack
 	void push (Data) {
@@ -61,7 +61,7 @@ public:
 
 	// return true if there are not any items in the stack
 	bool isEmpty () { 
-		if(head==newem){
+		if(head==nullptr){
  		return true;
 		}			
 			else{
@@ -79,7 +79,7 @@ public:
 			Node<Data>*temp=head;
 			head=head->getNext();
 			checkempty=temp->getData();
-			temp->setNext(newem);
+			temp->setNext(nullptr);
 			delete (temp);
 			return checkempty；
 		}
