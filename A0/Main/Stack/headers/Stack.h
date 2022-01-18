@@ -75,12 +75,12 @@ public:
 		if (isEmpty()){
 			return Data (); 
 			}
-			Data sets=head->getValue();
+			Date value=head->getValue();
 			Node<Data>*temp=head;
 			head=head->getNext();
 			temp -> setNext(nullptr);
 			delete (temp);
-			return sets；
+			return value；
 		}
 };
 
