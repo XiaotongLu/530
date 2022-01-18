@@ -1,6 +1,8 @@
 #ifndef STACK_H
 #define STACK_H
 
+using namespace std;
+
 // this is the node class used to build up the LIFO stack
 template <class Data>
 class Node {
@@ -11,8 +13,8 @@ private:
 	Node *next;
 	
 public:
-        Node(Data element){
-		holdMe=element;
+        Node(Data sets){
+		holdMe=sets;
 		next=nullptr;
 	}
 	
@@ -38,11 +40,11 @@ public:
 
 	// destroys the stack
 	~Stack () {
-		Node<Data>*temp;
+		
 		while (head!=nullptr){
+		        Node<Data>*temp;
 			temp=head;
 			head=head->getNext();
-			temp->setNext(nullptr);
 			delete (temp);
 			}
 		}
@@ -54,19 +56,17 @@ public:
 	// adds pushMe to the top of the stack
 	void push (Data) {
 		Node<Data>*Node2;
-		Node2=new Node<Data>(data);
+		Node2=new Node<Data>;
 		Node2->setNext(head);
 		head=Node2;
 		}
 
 	// return true if there are not any items in the stack
 	bool isEmpty () { 
-		if(head==nullptr){
- 		return true;
-		}			
-			else{
-				return false;
-				}
+		if(head==nullptr)
+		  return true;			
+		else
+		  return false;
 		}
 
 	// pops the item on the top of the stack off, returning it...
@@ -75,13 +75,12 @@ public:
 		if (isEmpty()){
 			return Data (); 
 			}
-			Data d;
+			Data sets=head->getValue();
 			Node<Data>*temp=head;
 			head=head->getNext();
-			d=temp->getData();
-			temp->setNext(nullptr);
+			temp -> setNext(nullptr);
 			delete (temp);
-			return d；
+			return sets；
 		}
 };
 
