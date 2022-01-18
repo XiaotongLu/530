@@ -75,13 +75,13 @@ public:
 		if (isEmpty(){
 			return Data (); 
 			}
-			Data checkempty;
+			Data ch;
 			Node<Data>*temp=head;
 			head=head->getNext();
-			checkempty=temp->getData();
+			ch=temp->getData();
 			temp->setNext(nullptr);
 			delete (temp);
-			return checkempty；
+			return ch；
 		}
 };
 
