@@ -55,10 +55,10 @@ public:
 
 	// adds pushMe to the top of the stack
 	void push (Data) {
-		Node<Data>*Node2;
-		Node2=new Node<Data>;
-		Node2->setNext(head);
-		head=Node2;
+		Node<Data>*NodeN;
+		NodeN=new Node<Data>;
+		NodeN->setNext(head);
+		head=NodeN;
 		}
 
 	// return true if there are not any items in the stack
