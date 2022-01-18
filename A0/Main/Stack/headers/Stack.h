@@ -75,7 +75,7 @@ public:
 		if (isEmpty()){
 			return Data (); 
 			}
-			Date value=head->getValue();
+			Data value=head->getValue();
 			Node<Data>*temp=head;
 			head=head->getNext();
 			temp -> setNext(nullptr);
