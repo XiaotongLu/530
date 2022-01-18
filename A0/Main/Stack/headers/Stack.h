@@ -72,17 +72,20 @@ public:
 	// pops the item on the top of the stack off, returning it...
 	// if the stack is empty, the behavior is undefined
 	Data pop () {
+	        
 		if (isEmpty()){
 			return Data (); 
 			}
-		else
+		else {
+		    Data value;
 		    value=head->getData();
 		    Node<Data>*temp=head;
 	            head=head->getNext();
 		    temp -> setNext(nullptr);
 		    delete (temp);
-		    return value；
-		}
+		    return value;
+		    }
+	}
 };
 
 #endif
